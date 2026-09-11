@@ -164,6 +164,20 @@ sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
 
 Restart the connection or reboot, then repeat the verification checklist. Replace `"Wired connection 1"` with the actual connection name.
 
+### Edit Connection option not visible on macOS
+
+On macOS, the **Edit Connection** option was not visible in the available network interface. The connection was accessed and configured with NetworkManager's graphical editor instead:
+
+```bash
+nm-connection-editor
+```
+
+If the editor is not available from the application menu, launch it from a terminal. The exact editor and available controls can vary by Kali desktop environment and installation.
+
+### VirtualBox Network settings difficult to find
+
+In VirtualBox, the **Network** section was difficult to find while the settings interface was using **Basic** view. Switching the interface from **Basic** to **Expert** exposed the Network options and made the adapter configuration accessible.
+
 ### Virtualization or VT-x startup error
 
 If the VM cannot start because hardware virtualization is unavailable, check that Intel VT-x or the platform's hardware-virtualization setting is enabled in firmware/UEFI. Save the setting, restart the host, and try the VM again. On macOS, also confirm that the host and VirtualBox versions support the selected guest configuration.
