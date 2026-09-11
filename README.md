@@ -148,22 +148,6 @@ These are verification commands, not claims that every check has been run in thi
 
 ## 🐞 Problems and Solutions
 
-### Internet connectivity after static IP configuration
-
-NetworkManager connection names differ between installations. Identify the active connection first:
-
-```bash
-nmcli connection show
-```
-
-If the connection requires it, one possible workaround is:
-
-```bash
-sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
-```
-
-Restart the connection or reboot, then repeat the verification checklist. Replace `"Wired connection 1"` with the actual connection name.
-
 ### Edit Connection option not visible on macOS
 
 On macOS, the **Edit Connection** option was not visible in the available network interface. The connection was accessed and configured with NetworkManager's graphical editor instead:
